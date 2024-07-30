@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  ms-contas-pagar-postgres:
+    image: postgres:15.4
+    hostname: localhost
+    container_name: ms-contas-pagar-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ms-contas-pagar
+    ports:
+      - "5432:5432"
+    networks:
+      - rede_contas_pagar      
+      
+  ms-contas-pagar-app:
+    depends_on:
+      - ms-contas-pagar-postgres
+    image: carloshfmaciel/ms-contas-pagar.jar:latest
+    hostname: localhost
+    ports:
+      - 8080:8080
+    networks:
+      - rede_contas_pagar
+      
+networks:
+  rede_contas_pagar:
+    driver: bridge               

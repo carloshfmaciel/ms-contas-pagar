@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>br.com.desafio</groupId>
 	<artifactId>ms-contas-pagar</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>ms-contas-pagar</name>
 	<description>Microserviço de Contas a Pagar</description>
 	<url />
@@ -97,6 +97,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>ms-contas-pagar</finalName>
 	</build>
 
 </project>
