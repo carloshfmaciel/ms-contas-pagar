@@ -12,11 +12,24 @@ public class ContasPagarBuilder {
 	}
 
 	public static ContasPagar toEntity(ContasPagarInsertRequest request) {
-		return ContasPagar.builder().build();
+		return ContasPagar.builder()
+				.dataVencimento(request.getDataVencimento())
+				.dataPagamento(request.getDataPagamento())
+				.valor(request.getValor())
+				.descricao(request.getDescricao())
+				.situacao(request.getSituacao())				
+				.build();
 	}
 
 	public static ContasPagarResponse toResponse(ContasPagar entity) {
-		return ContasPagarResponse.builder().build();
+		return ContasPagarResponse.builder()
+				.id(entity.getId())
+				.dataVencimento(entity.getDataVencimento())
+				.dataPagamento(entity.getDataPagamento())
+				.valor(entity.getValor())
+				.descricao(entity.getDescricao())
+				.situacao(entity.getSituacao())
+				.build();
 	}
 
 	public static ContasPagar copyFromFirstToSecond(ContasPagarUpdateRequest request, ContasPagar entity) {

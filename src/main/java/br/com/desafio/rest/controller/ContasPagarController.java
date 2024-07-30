@@ -54,14 +54,14 @@ public class ContasPagarController implements ContasPagarSwagger {
 	public ResponseEntity getByFilters(
 			@RequestParam(value = "dataVencimento", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate dataVencimento,
 			@RequestParam(value = "descricao", required = false) String descricao,
-			@RequestParam(value = "pageNumber", required = false) Integer pageNumber,
-			@RequestParam(value = "pageSize", required = false) Integer pageSize) {
+			@RequestParam(value = "pageNumber", required = false, defaultValue = "0") Integer pageNumber,
+			@RequestParam(value = "pageSize", required = false, defaultValue = "50") Integer pageSize) {
 		return ResponseEntity.ok(ResponseBuilder.toResponse(
 				contasPagarService.getByFilters(dataVencimento, descricao, PageRequest.of(pageNumber, pageSize))));
 	}
 
 	@PostMapping("/import")
-	public ResponseEntity importByFile(MultipartFile file) {
+	public ResponseEntity importByFile(@RequestParam("file") MultipartFile file) {
 		return ResponseEntity.ok(null);
 	}
 

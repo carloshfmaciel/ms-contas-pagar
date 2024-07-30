@@ -19,6 +19,11 @@ public class ContasPagarService {
 
 	private ContasPagarRepository contasPagarRepository;
 
+	public ContasPagarService(ContasPagarRepository contasPagarRepository) {
+		super();
+		this.contasPagarRepository = contasPagarRepository;
+	}
+
 	public ContasPagar save(ContasPagarInsertRequest request) {
 		ContasPagar contasPagar = ContasPagarBuilder.toEntity(request);
 		return contasPagarRepository.save(contasPagar);

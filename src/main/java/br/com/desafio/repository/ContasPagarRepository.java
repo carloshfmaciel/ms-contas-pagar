@@ -19,8 +19,8 @@ public interface ContasPagarRepository
 
 	@Query("""
 			SELECT cp FROM ContasPagar cp
-			WHERE (:dataVencimento IS NULL OR cp.dataVencimento = :dataVencimento)
-			AND (:descricao IS NULL OR trim(lower(cp.descricao)) LIKE trim(lower(concat('%', :descricao, '%'))))
+			WHERE (cast(:dataVencimento as date) IS NULL OR cp.dataVencimento = :dataVencimento)
+			AND (lower(cast(:descricao as text)) IS NULL OR trim(LOWER(cp.descricao)) LIKE trim(LOWER(concat('%', cast(:descricao as text), '%'))))
 			ORDER BY cp.dataVencimento
 			""")
 	public Page<ContasPagar> getByFilters(@Param("dataVencimento") LocalDate dataVencimento,

@@ -1,16 +1,16 @@
 version: "3.8"
 services:
-  postgres:
+  postgres-ms-contas-pagar:
     image: postgres:15.4
     hostname: postgresql
-    container_name: postgresql
+    container_name: postgres-ms-contas-pagar
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: ms-gestao-ativos
+      POSTGRES_DB: ms-contas-pagar
     ports:
       - "5432:5432"
       
 networks:
-  postgres:
+  postgres-ms-contas-pagar:
     driver: bridge               
