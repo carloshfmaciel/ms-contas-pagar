@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,7 +52,7 @@ public interface ContasPagarSwagger {
 
 	@Operation(summary = "Import de registros de contas a pagar através de arquivos csv", description = "Endpoint que importa registros de contas a pagar através de arquivos csv!")	
 	@Tags(value = @Tag(name = "Contas a Pagar", description = "Contas a Pagar"))
-	@PostMapping("/import")
+	@PostMapping(value = "/import", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity importByFile(@RequestParam("file") MultipartFile file);
 	
 }

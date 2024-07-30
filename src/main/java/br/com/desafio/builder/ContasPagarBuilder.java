@@ -1,5 +1,7 @@
 package br.com.desafio.builder;
 
+import java.util.List;
+
 import br.com.desafio.domain.ContasPagar;
 import br.com.desafio.rest.request.ContasPagarInsertRequest;
 import br.com.desafio.rest.request.ContasPagarUpdateRequest;
@@ -30,6 +32,10 @@ public class ContasPagarBuilder {
 				.descricao(entity.getDescricao())
 				.situacao(entity.getSituacao())
 				.build();
+	}
+	
+	public static List<ContasPagarResponse> toResponse(List<ContasPagar> entities) {
+		return entities.stream().map(ContasPagarBuilder::toResponse).toList();
 	}
 
 	public static ContasPagar copyFromFirstToSecond(ContasPagarUpdateRequest request, ContasPagar entity) {

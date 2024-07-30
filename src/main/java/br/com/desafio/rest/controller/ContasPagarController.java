@@ -5,6 +5,7 @@ import java.util.UUID;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,9 +61,9 @@ public class ContasPagarController implements ContasPagarSwagger {
 				contasPagarService.getByFilters(dataVencimento, descricao, PageRequest.of(pageNumber, pageSize))));
 	}
 
-	@PostMapping("/import")
+	@PostMapping(value = "/import", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public ResponseEntity importByFile(@RequestParam("file") MultipartFile file) {
-		return ResponseEntity.ok(null);
+		return ResponseEntity.ok(ContasPagarBuilder.toResponse(contasPagarService.importByFile(file)));
 	}
 
 }
