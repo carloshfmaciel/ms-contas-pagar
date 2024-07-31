@@ -6,11 +6,17 @@ import java.util.UUID;
 
 import br.com.desafio.constants.SituacaoEnum;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ContasPagarUpdateRequest {
 	
 	@NotNull(message = "propriedade id deve ser informada!")
