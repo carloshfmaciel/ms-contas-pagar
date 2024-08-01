@@ -44,6 +44,17 @@ Para iniciar a aplicação juntamente com o banco de dados, baixando e executand
 
 ![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/005.jpg)
 
+# Como testar o import de contas a pagar pelo arquivo csv
+
+1. Baixar o [arquivo CSV](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/outros/contas-pagar.csv)
+2. Após estar autenticado, importar o arquivo csv baixado conforme abaixo e clicar em **"Executar"**
+
+![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/006.jpg)
+
+3. Após ter processado o arquivo, o endpoint retorna status 200 e a listagem dos registros que foram importados e persistidos na base de dados. 
+
+![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/007.jpg)
+
 # Desenvolvimento
 
 ## Requisitos para iniciar a aplicação para desenvolvimento
@@ -60,8 +71,6 @@ Para iniciar a aplicação juntamente com o banco de dados, baixando e executand
 3. Iniciar a aplicação
 	- Via linha de comando
 	- Ou através da IDE
-	
-
 	
 # Considerações finais
 
