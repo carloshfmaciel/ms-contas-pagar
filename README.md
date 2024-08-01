@@ -11,7 +11,7 @@ A mesma é composta dos endpoints abaixo, que permite executar as seguintes oper
 
 ## Arquitetura da aplicação
 
-- A aplicação é funciona basicamente excutando o fluxo em 3 camadas (Controller > Service > Repository/DAO)
+- A aplicação funciona basicamente excutando o fluxo em 3 camadas (Controller > Service > Repository/DAO)
 - Autenticação usando Basic Authentication
 - Swagger
 - Testes unitário utilizando JUnit e Mockito
@@ -44,7 +44,7 @@ Para iniciar a aplicação juntamente com o banco de dados, baixando e executand
 
 ![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/003.jpg)
 
-8. A partir de agora toda e qualquer requisição terá o header o header **Authorization**
+8. A partir de agora toda e qualquer requisição terá o header **Authorization**
 
 ![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/005.jpg)
 
