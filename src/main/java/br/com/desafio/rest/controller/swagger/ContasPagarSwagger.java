@@ -23,7 +23,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.tags.Tags;
 import jakarta.validation.Valid;
 
-@OpenAPIDefinition(info = @Info(title = "Serviço Gestão de Ativos - OpenAPI 3.0", version = "v1.0", description = ""))
+@OpenAPIDefinition(info = @Info(title = "Serviço Gestão de Contas a Pagar - OpenAPI 3.0", version = "v1.0", description = ""))
 public interface ContasPagarSwagger {
 	
 	@Operation(summary = "Insere um novo registro de contas a pagar", description = "Endpoint que insere um novo registro de contas a pagar!")
