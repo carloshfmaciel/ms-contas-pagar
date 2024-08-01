@@ -16,11 +16,15 @@ A mesma é composta dos endpoints abaixo, que permite executar as seguintes oper
 - Swagger
 - Testes unitário utilizando JUnit e Mockito
 
+## Organização do código do Projeto
+
+![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/008.jpg)
+
 # Como iniciar e testar a aplicação somente com o docker
 
 Para iniciar a aplicação juntamente com o banco de dados, baixando e executando diretamente as imagens de ambos, fazer:
 
-1. Baixar o arquivo docker-compose.yml
+1. Baixar o arquivo [docker-compose.yml](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/outros/docker-compose.yml)
 2. No diretório que se encontra o docker-compose.yml, executar o comando 
 	- docker-compose up
 3. Acessar a url do swagger para testar os endpoints
