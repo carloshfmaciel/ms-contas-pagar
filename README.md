@@ -1,6 +1,6 @@
 # Sobre
 
-Essa aplicação foi desenvolvida com a finalidade de atender os requisitos abaixo do anexo abaixo:
+Essa aplicação foi desenvolvida com a finalidade de atender os requisitos descritos no [arquivo](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/outros/teste%20-%20JAVA%20Sr.pdf).
 
 A mesma é composta dos endpoints abaixo, que permite executar as seguintes operações
 - Inclusão de Contas a Pagar
@@ -15,6 +15,34 @@ A mesma é composta dos endpoints abaixo, que permite executar as seguintes oper
 - Autenticação usando Basic Authentication
 - Swagger
 - Testes unitário utilizando JUnit e Mockito
+
+# Como iniciar e testar a aplicação somente com o docker
+
+Para iniciar a aplicação juntamente com o banco de dados, baixando e executando diretamente as imagens de ambos, fazer:
+
+1. Baixar o arquivo docker-compose.yml
+2. No diretório que se encontra o docker-compose.yml, executar o comando 
+	- docker-compose up
+3. Acessar a url do swagger para testar os endpoints
+	- http://localhost:8080/swagger-ui/index.html
+
+![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/001.jpg)
+
+4. Necessário se autenticar, clicando no botão Authorize do Swagger
+
+![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/004.jpg)
+
+4. Informar usuario **"user"** e senha **"password"** e clicar no botão **Authorize**
+
+![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/002.jpg)
+
+6. Clicar no Botão Close.
+
+![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/003.jpg)
+
+8. A partir de agora toda e qualquer requisição terá o header o header **Authorization**
+
+![image](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/screenshots/005.jpg)
 
 # Desenvolvimento
 
@@ -33,15 +61,7 @@ A mesma é composta dos endpoints abaixo, que permite executar as seguintes oper
 	- Via linha de comando
 	- Ou através da IDE
 	
-# Como iniciar a aplicação somente com o docker
 
-Para iniciar a aplicação juntamente com o banco de dados, baixando e executando diretamente as imagens de ambos, fazer:
-
-1. Baixar o arquivo docker-compose.yml
-2. No diretório que se encontra o docker-compose.yml, executar o comando 
-	- docker-compose up
-3. Acessar a url do swagger para testar os endpoints
-	- http://localhost:8080/swagger-ui/index.html
 	
 # Considerações finais
 
