@@ -1,8 +1,10 @@
 # Sobre
 
+Aplicação utilizando Java 17, Spring Boot, Flyway, Swagger, REST Endpoint, Autenticação BASIC, Docker e Banco de dados POSTGRES.
+
 Essa aplicação foi desenvolvida com a finalidade de atender os requisitos descritos no [arquivo](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/outros/teste%20-%20JAVA%20Sr.pdf).
 
-A mesma é composta dos endpoints abaixo, que permite executar as seguintes operações
+A mesma é composta das seguintes operações
 - Inclusão de Contas a Pagar
 - Edição de Contas a Pagar(Incluindo a situação da mesma)
 - Pesquisa de todos os registros de Conta a Pagar (Paginado)
@@ -13,7 +15,7 @@ A mesma é composta dos endpoints abaixo, que permite executar as seguintes oper
 
 - A aplicação funciona basicamente excutando o fluxo em 3 camadas (Controller > Service > Repository/DAO)
 - Autenticação usando Basic Authentication
-- Swagger
+- Gerenciamento/Versionamento da base dados pela própria aplicação através do Flyway
 - Testes unitário utilizando JUnit e Mockito
 
 ## Organização do código do Projeto
