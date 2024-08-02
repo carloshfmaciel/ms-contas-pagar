@@ -81,7 +81,7 @@ Para iniciar a aplicação juntamente com o banco de dados, baixando e executand
 # Considerações finais
 
 - Teste Unitários
-	- Como se trata de uma aplicação exemplo, foi realizado apenas o teste unitário da classe ContasPagarService, através da classe [ContasPagarServiceTest](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/src/test/java/br/com/desafio/service/ContasPagarServiceTest.java) no respectivo pacote de teste de aplicação.
+	- Como se trata de uma aplicação exemplo, foi realizado apenas o teste unitário da classe ContasPagarService, através da classe [ContasPagarServiceTest](https://github.com/carloshfmaciel/ms-contas-pagar/blob/master/src/test/java/br/com/desafio/service/ContasPagarServiceTest.java) no respectivo pacote de teste de aplicação. Em uma aplicação real, deveríamos ter um percentual mínimo de cobertura que depende da política de cada projeto, mas costuma ser entre 60 e 80%.
 - Import dos arquivos
 	- Como se trata de uma aplicação exemplo, deixei o import "síncrono". Em uma aplicação real, o mesmo deveria ser assíncrono e ser disponibilizado uma api para que o requisitante pudesse acompanhar o status de processamento do arquivo.
 - Autenticação
