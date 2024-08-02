@@ -1,6 +1,7 @@
 package br.com.desafio.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -47,7 +48,6 @@ class ContasPagarServiceTest {
 	@BeforeEach
 	void init() {
 		MockitoAnnotations.openMocks(this);
-//		mockStatic(ContasPagarBuilder.class);
 	}
 
 	@Test
@@ -176,16 +176,17 @@ class ContasPagarServiceTest {
 
 	@Test
 	void testImportByFiles() throws IOException {
-		ContasPagar contasPagar = ContasPagar.builder().id(UUID.randomUUID()).dataVencimento(LocalDate.now())
-				.dataPagamento(LocalDate.now()).valor(BigDecimal.valueOf(10.0d)).descricao("Alguma descrição")
-				.situacao(SituacaoEnum.ABERTO).build();
+		ContasPagar contasPagar = ContasPagar.builder()
+				.id(UUID.randomUUID()).dataVencimento(LocalDate.now())
+				.dataPagamento(LocalDate.of(2024, 8, 15))
+				.valor(BigDecimal.valueOf(184.30d))
+				.descricao("Conta de Água")
+				.situacao(SituacaoEnum.ABERTO)
+				.build();
 
 		String csv = """
 					Data_Vencimento,Data_Pagamento,Valor,Descricao,Situacao
 					2024-08-15,,184.30,Conta de Água,ABERTO
-					2024-08-10,,237.50,Conta de Luz,ABERTO
-					2024-08-05,,139.90,Conta de Internet,ABERTO
-					2024-08-07,,90.00,Conta de Gás,ABERTO
 				""";
 
 		MockMultipartFile multipartFile = new MockMultipartFile("data", "contas-pagar.csv", "text/plain",
@@ -193,7 +194,11 @@ class ContasPagarServiceTest {
 
 		when(contasPagarRepository.saveAll(anyCollection())).thenReturn(List.of(contasPagar));
 
-		contasPagarService.importByFile(multipartFile);
+		List<ContasPagar> response = contasPagarService.importByFile(multipartFile);
+		
+		assertNotNull(response);
+		assertFalse(response.isEmpty());
+		assertEquals(1, response.size());
 	}
 
 }
