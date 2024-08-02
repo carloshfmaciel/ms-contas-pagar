@@ -84,3 +84,5 @@ Para iniciar a aplicação juntamente com o banco de dados, baixando e executand
 	- Como se trata de uma aplicação exemplo, deixei o import "síncrono". Em uma aplicação real, o mesmo deveria ser assíncrono e ser disponibilizado uma api para que o requisitante pudesse acompanhar o status de processamento do arquivo.
 - Autenticação
 	- Como se trata de uma aplicação exemplo, deixei a autenticação básica. Em uma aplicação real, temos opções melhores como Token Bearer, JWT e OAUTH.
+ - Credencias application.yml
+       - Como se trata de uma aplicação exemplo, copiei o application.properties diretamente para dentro da imagem docker da aplicação. Em uma aplicação real, essas credenciais deveriam ser informadas via variável de ambiente através de algum mecanismo de CI/CD obtendo os dados diretamente de um Secret Manager.  	
